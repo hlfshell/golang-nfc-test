@@ -1,0 +1,5 @@
+github.com/clausecker/nfc v0.0.0-20160114122741-3b2ea457777d h1:n5QYeFzRZ3eG78zAalLO+4Jd9O2PcmjiaNy1LGA1Vcg=
+github.com/clausecker/nfc v0.0.0-20160114122741-3b2ea457777d/go.mod h1:lXXT6QMfPlF4bvxieC6KjQrzUMb/eCQakk9BN08WjR0=
+github.com/clausecker/nfc v2.1.4+incompatible h1:isLXtmGICuiyKXM6jYQ/DP26pO3AzNcp6yWMJCXXmCw=
+github.com/clausecker/nfc/v2 v2.1.4 h1:zw2Cnny7pxPnuxVMBo+DXqXYETzUN7pMhNEA61yT5gY=
+github.com/clausecker/nfc/v2 v2.1.4/go.mod h1:BjRBQUQTQmiwh2tEfQ+xBM5xY05sV2gnZ0JRYEHog/o=
