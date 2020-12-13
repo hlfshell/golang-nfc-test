@@ -1,3 +1,5 @@
+![Build](doc/build.jpg)
+
 # golang NFC Test
 
 This was a test to get the `PN532` chip found on a lot of low cost NFC readers out there working with the Raspberry Pi - and then getting it to work with GoLang. This is a test project to test feasability for a future project.
@@ -49,7 +51,9 @@ sudo make install all
 You can test if it's working (and if your hardware is connected) via `nfc-list` or `nfc-poll`. `nfc-list --version` will tell you what version of nfc-lib you are currently using. Ensure that it's `1.8.0`.
 
 ## Connecting the hardware
-The `PN532` board I had needed 5V for its power so I used a level shifter in order to facilitate communication between the Pi and the NFC Chip. See the quick diagram below for wiring:
+The `PN532` board I had needed 5V for its power so I used a level shifter in order to facilitate communication between the Pi and the NFC Chip. See the quick ugly diagram below for wiring:
+
+![Wiring](doc/wiring.jpg)
 
 ## Go Example
 I utilized [clausecker's nfc module](https://github.com/clausecker/nfc) for go. The example code for a quick nfc scan is in `main.go`
