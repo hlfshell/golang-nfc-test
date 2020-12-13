@@ -29,8 +29,6 @@ func main() {
 		panic(err)
 	}
 
-	var readTarget *nfc.Target
-
 	for {
 		targets, err := dev.InitiatorListPassiveTargets(nfc.Modulation{
 			BaudRate: nfc.Nbr106,
@@ -39,24 +37,10 @@ func main() {
 		if err != nil {
 			panic(err)
 		} else {
-			var scanTarget *nfc.Target
 			for _, target := range targets {
 				if card, ok := target.(*nfc.ISO14443aTarget); ok {
-					scanTarget = &target
-					if readTarget == nil {
-						fmt.Println("Card read", card.UID)
-						readTarget = &target
-					}
-					if err := dev.InitiatorInit(); err != nil {
-						panic(err)
-					}
+					fmt.Println("Card read", card.UID)
 					break
-				}
-			}
-			if scanTarget == nil {
-				if readTarget != nil {
-					fmt.Println("Card removed")
-					readTarget = nil
 				}
 			}
 		}
