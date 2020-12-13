@@ -1,10 +1,15 @@
 ![Build](doc/build.jpg)
 
-# golang NFC Test
+# golang NFC Tests
 
-This was a test to get the `PN532` chip found on a lot of low cost NFC readers out there working with the Raspberry Pi - and then getting it to work with GoLang. This is a test project to test feasability for a future project.
+These were tests to get the `PN532` chip found on a lot of low cost NFC readers out there working with the Raspberry Pi - and then getting it to work with GoLang. There are two tests within. These mini-projects are to see overall feasability for a future project - an NFC controller music and podcast player.
 
-This documentation has links to what information I found useful and how I got various libraries installed.
+* `simple-nfc-test` - just a test NFC app that will detect an NFC card read its UID off of it.
+* `music-player` - specify an mp3 location at startup. When the NFC card is present, it will play the music. It will pause as soon as the NFC card is removed.
+
+The rest of this documentation has links and a general explanation for how I got various libraries installed and working.
+
+# Installation
 
 ## Enable serial port on Raspberry Pi 
 
@@ -57,3 +62,6 @@ The `PN532` board I had needed 5V for its power so I used a level shifter in ord
 
 ## Go Example
 I utilized [clausecker's nfc module](https://github.com/clausecker/nfc) for go. The example code for a quick nfc scan is in `main.go`
+
+## Specifying Connection String
+I eventually started including the connection string, `pn532_uart:/dev/ttyS0`, when opening a connection instead of relying on `libnfc`'s auto scan feature. Somehow after a reboot autoscan stopped working, despite specifying the reader's location working flawlesly.
