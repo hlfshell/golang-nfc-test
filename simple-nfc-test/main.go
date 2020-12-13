@@ -11,7 +11,7 @@ func init() {
 }
 
 func main() {
-	dev, err := nfc.Open("")
+	dev, err := nfc.Open("pn532_uart:/dev/ttyS0")
 	if err != nil {
 		panic(err)
 	}
